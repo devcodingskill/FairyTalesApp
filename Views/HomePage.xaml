@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:FairyTalesApp.Model"
              x:Class="FairyTalesApp.Views.HomePage"
              Shell.TabBarIsVisible="False">
     <Grid BackgroundColor="#0D0118"
           RowDefinitions=".05*,.1*,.45*,.05*,.05*,.3*">
-      
+
         <Label Text="Fairy Tales"
                FontSize="16"
                HorizontalOptions="Center"
                VerticalOptions="Center"
                TextColor="White"
-               Grid.Row="0"/>
+               Grid.Row="0" />
 
         <Grid Grid.Row="1"
               Margin="25,10,25,10">
@@ -24,6 +25,91 @@
                        TextColor="White"
                        VerticalOptions="Center" />
         </Grid>
+
+
+        <CarouselView    Grid.Row="2"
+                         PeekAreaInsets="30">
+            <CarouselView.ItemsLayout>
+                <LinearItemsLayout ItemSpacing="0"
+                                   Orientation="Horizontal"
+                                   SnapPointsAlignment="Center"
+                                   SnapPointsType="MandatorySingle" />
+            </CarouselView.ItemsLayout>
+            <CarouselView.ItemsSource>
+                <x:Array Type="{x:Type model:FairyTale}">
+                    <model:FairyTale Name="Test1"
+                                     ImageFairyTale="pan.jpg" />
+                    <model:FairyTale Name="Test2"
+                                     ImageFairyTale="tyler.jpg" />
+                    <model:FairyTale Name="Test3"
+                                     ImageFairyTale="pan.jpg" />
+                    <model:FairyTale Name="Test4"
+                                     ImageFairyTale="tyler.jpg" />
+                </x:Array>
+            </CarouselView.ItemsSource>
+
+            <CarouselView.ItemTemplate>
+                <DataTemplate x:DataType="model:FairyTale">
+                    <Grid>
+                        <Border BackgroundColor="#311B45"
+                                HeightRequest="300"
+                                Stroke="#6E557C"
+                                StrokeThickness="2"
+                                WidthRequest="300">
+                            <Border.StrokeShape>
+                                <RoundRectangle CornerRadius="30,30,30,30" />
+                            </Border.StrokeShape>
+                            
+                            <Grid RowDefinitions=".2*,.6*,.2*">
+                                <Image Source="{Binding ImageFairyTale}"
+                                       Aspect="AspectFill"
+                                       Grid.RowSpan="3" />
+                                <RoundRectangle Grid.RowSpan="3"
+                                                HeightRequest="300"
+                                                WidthRequest="300"
+                                                CornerRadius="30">
+                                    <RoundRectangle.Fill>
+                                        <LinearGradientBrush EndPoint="0,1">
+                                            <GradientStop Offset="0"
+                                                          Color="Transparent" />
+                                            <GradientStop Offset="1"
+                                                          Color="#030005" />
+                                        </LinearGradientBrush>
+                                        
+                                    </RoundRectangle.Fill>
+                                </RoundRectangle>
+                                
+                                <Label Margin="0,20,20,0"
+                                       FontFamily="Icons"
+                                       FontSize="25"
+                                       HorizontalOptions="End"
+                                       Text="&#xF00;"
+                                       TextColor="White" />
+                                <VerticalStackLayout Grid.Row="2"
+                                                     Margin="20,0,0,0">
+                                    <Label Text="{Binding Name}"
+                                           TextColor="White"
+                                           FontSize="Large" />
+                                    <Label Text="Read time 15 mins"
+                                           TextColor="White" />
+                                </VerticalStackLayout>
+                            </Grid>
+                            
+                            <Border.Shadow>
+                                <Shadow Brush="#C283FD"
+                                        Opacity=".3"
+                                        Radius="50"
+                                        Offset="20,20" />
+                            </Border.Shadow>
+                        </Border>
+                    </Grid>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+
+
+
+
 
     </Grid>
 </ContentPage>

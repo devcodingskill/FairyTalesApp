@@ -51,6 +51,8 @@
 	<ItemGroup>
 	  <None Remove="Resources\Fonts\Epilogue-Medium 500.ttf" />
 	  <None Remove="Resources\Fonts\fontello.ttf" />
+	  <None Remove="Resources\Images\pan.jpg" />
+	  <None Remove="Resources\Images\tyler.jpg" />
 	</ItemGroup>
 
 	<ItemGroup>

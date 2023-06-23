@@ -6,6 +6,6 @@ namespace FairyTalesApp.Model
         public string Name { get; set; }    
         public TimeSpan ReadTime { get; set; }
         public bool IsSave { get; set; }    
-        public string Image {get; set; }    
+        public string ImageFairyTale {get; set; }    
     }
 }
