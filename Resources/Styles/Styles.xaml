@@ -402,4 +402,16 @@
         <Setter Property="SelectedTabColor" Value="{AppThemeBinding Light={StaticResource Gray950}, Dark={StaticResource Gray200}}" />
     </Style>
 
+    <Style x:Key="MenuText" TargetType="Label">
+        <Setter Property="TextColor"  Value="{x:StaticResource IconGrayApp}" />
+        <Setter Property="FontSize"  Value="10" />        
+    </Style>
+   
+    <Style x:Key="FontIconText" TargetType="Label">
+        <Setter Property="TextColor"  Value="{x:StaticResource IconGrayApp}" />
+        <Setter Property="FontSize"   Value="20" />
+        <Setter Property="FontFamily" Value="Icons" />
+    </Style>
+
+
 </ResourceDictionary>

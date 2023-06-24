@@ -2,27 +2,28 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:model="clr-namespace:FairyTalesApp.Model"
+             xmlns:helper="clr-namespace:FairyTalesApp.Helpers"
              x:Class="FairyTalesApp.Views.HomePage"
              Shell.TabBarIsVisible="False">
-    <Grid BackgroundColor="#0D0118"
+    <Grid BackgroundColor="{x:StaticResource PrimaryBackgroudApp}"
           RowDefinitions=".05*,.1*,.45*,.05*,.05*,.3*">
 
         <Label Text="Fairy Tales"
                FontSize="16"
                HorizontalOptions="Center"
                VerticalOptions="Center"
-               TextColor="White"
+               TextColor="{x:StaticResource White}"
                Grid.Row="0" />
 
         <Grid Grid.Row="1"
               Margin="25,10,25,10">
             <RoundRectangle CornerRadius="25"
-                            Fill="#311B45"
+                            Fill="{x:StaticResource BackgroudApp}"
                             HeightRequest="45" />
-            <SearchBar CancelButtonColor="White"
+            <SearchBar CancelButtonColor="{x:StaticResource White}"
                        Placeholder="Search by name"
-                       PlaceholderColor="#Ac9DB9"
-                       TextColor="White"
+                       PlaceholderColor="{x:StaticResource IconGrayApp}"
+                       TextColor="{x:StaticResource White}"
                        VerticalOptions="Center" />
         </Grid>
 
@@ -52,9 +53,9 @@
             <CarouselView.ItemTemplate>
                 <DataTemplate x:DataType="model:FairyTale">
                     <Grid>
-                        <Border BackgroundColor="#311B45"
+                        <Border BackgroundColor="{x:StaticResource BackgroudApp}"
                                 HeightRequest="300"
-                                Stroke="#6E557C"
+                                Stroke="{x:StaticResource StockApp}"
                                 StrokeThickness="2"
                                 WidthRequest="300">
                             <Border.StrokeShape>
@@ -74,7 +75,7 @@
                                             <GradientStop Offset="0"
                                                           Color="Transparent" />
                                             <GradientStop Offset="1"
-                                                          Color="#030005" />
+                                                          Color="{x:StaticResource LightBlackApp}" />
                                         </LinearGradientBrush>
 
                                     </RoundRectangle.Fill>
@@ -84,15 +85,15 @@
                                        FontFamily="Icons"
                                        FontSize="25"
                                        HorizontalOptions="End"
-                                       Text="&#xF00;"
-                                       TextColor="White" />
+                                       Text="{x:Static helper:FontelloHelper.BookmarkEmpty}"
+                                       TextColor="{x:StaticResource White}" />
                                 <VerticalStackLayout Grid.Row="2"
                                                      Margin="20,0,0,0">
                                     <Label Text="{Binding Name}"
-                                           TextColor="White"
+                                           TextColor="{x:StaticResource White}"
                                            FontSize="Large" />
                                     <Label Text="Read time 15 mins"
-                                           TextColor="White" />
+                                           TextColor="{x:StaticResource White}" />
                                 </VerticalStackLayout>
                             </Grid>
 
@@ -119,7 +120,7 @@
         <Label Grid.Row="4"
                Text="Recommended for you"
                FontSize="16"
-               TextColor="White"
+               TextColor="{x:StaticResource White}"
                VerticalOptions="Center"
                Margin="25,10,25,10" />
 
@@ -147,7 +148,7 @@
                         <Border HeightRequest="200"
                                 WidthRequest="200"
                                 HorizontalOptions="Center"
-                                Stroke="#6E557C"
+                                Stroke="{x:StaticResource StockApp}"
                                 StrokeThickness="2">
                             <Border.StrokeShape>
                                 <RoundRectangle CornerRadius="20,20,20,20" />
@@ -165,8 +166,8 @@
               Margin="15,0,15,0"
               HeightRequest="75"
               VerticalOptions="End">
-            <Border BackgroundColor="#311B45"
-                    Stroke="#6E557C"
+            <Border BackgroundColor="{x:StaticResource BackgroudApp}"
+                    Stroke="{x:StaticResource StockApp}"
                     StrokeThickness="2">
                 <Border.StrokeShape>
                     <RoundRectangle CornerRadius="30,30,30,30" />
@@ -178,56 +179,55 @@
                            Grid.Row="1"
                            FontSize="10"
                            Text="Home"
-                           TextColor="White" 
+                           TextColor="{x:StaticResource White}" 
                            HorizontalOptions="Center"/>
                     <Label Grid.Column="1"
                            Grid.Row="1"
-                           FontSize="10"
-                           Text="Search"
-                           TextColor="#AC9DB9"
+                           Style="{x:StaticResource Key=MenuText}"
+                           Text="Search"                          
                            HorizontalOptions="Center" />
                     <Label Grid.Column="2"
                            Grid.Row="1"
                            FontSize="10"
                            Text="Libray"
-                           TextColor="#AC9DB9"
+                           TextColor="{x:StaticResource IconGrayApp}"
                            HorizontalOptions="Center" />
                     <Label Grid.Column="3"
                            Grid.Row="1"
                            FontSize="10"
                            Text="Profile"
-                           TextColor="#AC9DB9"
+                           TextColor="{x:StaticResource IconGrayApp}"
                            HorizontalOptions="Center" />
                     <Label Grid.Column="0"
                            Grid.Row="0"
                            FontSize="20"
                            FontFamily="Icons"
-                           Text="&#xE80D;"
-                           TextColor="White"
+                           Text="{x:Static helper:FontelloHelper.Home}"
+                           TextColor="{x:StaticResource White}"
                            HorizontalOptions="Center" 
                            VerticalOptions="End"/>
                     <Label Grid.Column="1"
                            Grid.Row="0"
                            FontSize="20"
                            FontFamily="Icons"
-                           Text="&#xE801;"
-                           TextColor="#AC9DB9"
+                           Text="{x:Static helper:FontelloHelper.Search}"
+                           TextColor="{x:StaticResource IconGrayApp}"
                            HorizontalOptions="Center"
                            VerticalOptions="End" />
                     <Label Grid.Column="2"
                            Grid.Row="0"
                            FontSize="20"
                            FontFamily="Icons"
-                           Text="&#xE800;"
-                           TextColor="#AC9DB9"
+                           Text="{x:Static helper:FontelloHelper.Book}"
+                           TextColor="{x:StaticResource IconGrayApp}"
                            HorizontalOptions="Center"
                            VerticalOptions="End" />
                     <Label Grid.Column="3"
                            Grid.Row="0"
                            FontSize="20"
                            FontFamily="Icons"
-                           Text="&#xE823;"
-                           TextColor="#AC9DB9"
+                           Text="{x:Static helper:FontelloHelper.User}"
+                           TextColor="{x:StaticResource IconGrayApp}"
                            HorizontalOptions="Center"
                            VerticalOptions="End" />
                 </Grid>
