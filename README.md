@@ -33,27 +33,8 @@ Xaml string format for time span
 https://stackoverflow.com/questions/4563081/how-to-format-timespan-in-xaml
 https://learn.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/data-binding/string-formatting
 
+## Sample image
 
-
-
-```bash
-pip install foobar
-```
-
-## Usage
-
-```python
-import foobar
-
-# returns 'words'
-foobar.pluralize('word')
-
-# returns 'geese'
-foobar.pluralize('goose')
-
-# returns 'phenomenon'
-foobar.singularize('phenomena')
-```
 
 ## Contributing
 
