@@ -20,7 +20,7 @@ https://github.com/fontello/fontello/wiki/Help
 - Download
 https://fontsnetwork.com/fontello-font/
 
-Imaage use on the project
+Image use on the project
 https://unsplash.com/s/photos/disney-cartoon?license=free
 
 ## Document when problem come up on the project
