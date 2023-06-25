@@ -34,7 +34,7 @@ https://stackoverflow.com/questions/4563081/how-to-format-timespan-in-xaml
 https://learn.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/data-binding/string-formatting
 
 ## Sample image
-
+![alt text](https://github.com/devcodingskill/FairyTalesApp/blob/master/SampleImage/FairyTaleApp.png)
 
 ## Contributing
 
