@@ -1,10 +1,40 @@
-# Foobar
+# FAIRY TALED App
 
-Foobar is a Python library for dealing with word pluralization.
+The project is using .Net Maui for the cross plateform.
+This project is only UI which is follow this https://www.youtube.com/watch?v=McNQNmPDdu8&t=625s
 
-## Installation
+## Using Package
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install foobar.
+Use the CommunityToolkit.Mvvm package  
+
+ObservableObject: a base class for objects implementing the INotifyPropertyChange
+
+## Link 
+
+FontIcon to code  
+https://andreinitescu.github.io/IconFont2Code/
+
+FontIcon fontello.ttf
+- Document
+https://github.com/fontello/fontello/wiki/Help
+- Download
+https://fontsnetwork.com/fontello-font/
+
+Imaage use on the project
+https://unsplash.com/s/photos/disney-cartoon?license=free
+
+## Document when problem come up on the project
+
+Change search bar icon for Android
+https://stackoverflow.com/questions/76519399/how-to-make-magnifying-glass-icon-in-searchbar-visible
+https://developer.android.com/reference/android/graphics/PorterDuff.Mode
+
+Xaml string format for time span
+https://stackoverflow.com/questions/4563081/how-to-format-timespan-in-xaml
+https://learn.microsoft.com/en-us/xamarin/xamarin-forms/app-fundamentals/data-binding/string-formatting
+
+
+
 
 ```bash
 pip install foobar
