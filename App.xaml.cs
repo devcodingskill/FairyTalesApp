@@ -1,4 +1,5 @@
-﻿using FairyTalesApp.Views;
+﻿using FairyTalesApp.ViewModels;
+using FairyTalesApp.Views;
 
 namespace FairyTalesApp;
 
@@ -7,7 +8,8 @@ public partial class App : Application
 	public App()
 	{
 		InitializeComponent();
-
-		MainPage = new HomePage();
+		//hack
+		HomePageViewModel viewModel = new HomePageViewModel();
+		MainPage = new HomePage(viewModel);
 	}
 }

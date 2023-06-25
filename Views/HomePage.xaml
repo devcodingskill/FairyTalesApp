@@ -3,6 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:model="clr-namespace:FairyTalesApp.Model"
              xmlns:helper="clr-namespace:FairyTalesApp.Helpers"
+             xmlns:viewmodel="clr-namespace:FairyTalesApp.ViewModels"
+             x:DataType="viewmodel:HomePageViewModel"
              x:Class="FairyTalesApp.Views.HomePage"
              Shell.TabBarIsVisible="False">
     <Grid BackgroundColor="{x:StaticResource PrimaryBackgroudApp}"
@@ -24,11 +26,21 @@
                        Placeholder="Search by name"
                        PlaceholderColor="{x:StaticResource IconGrayApp}"
                        TextColor="{x:StaticResource White}"
-                       VerticalOptions="Center" />
+                       VerticalOptions="Center">
+                <!--<SearchBar.BackgroundColor>
+                    <OnPlatform x:TypeArguments="Color">
+                        <On Platform="Android"
+                            Value="DarkGray" />
+                        <On Platform="iOS"
+                            Value="{StaticResource BackgroudApp}" />
+                    </OnPlatform>
+                </SearchBar.BackgroundColor>-->
+            </SearchBar>
         </Grid>
 
 
         <CarouselView    Grid.Row="2"
+                         ItemsSource="{Binding FairyTales}"
                          PeekAreaInsets="30"
                          IndicatorView="indicatorView">
             <CarouselView.ItemsLayout>
@@ -37,7 +49,7 @@
                                    SnapPointsAlignment="Center"
                                    SnapPointsType="MandatorySingle" />
             </CarouselView.ItemsLayout>
-            <CarouselView.ItemsSource>
+            <!--<CarouselView.ItemsSource>
                 <x:Array Type="{x:Type model:FairyTale}">
                     <model:FairyTale Name="Test1"
                                      ImageFairyTale="pan.jpg" />
@@ -48,7 +60,7 @@
                     <model:FairyTale Name="Test4"
                                      ImageFairyTale="tyler.jpg" />
                 </x:Array>
-            </CarouselView.ItemsSource>
+            </CarouselView.ItemsSource>-->
 
             <CarouselView.ItemTemplate>
                 <DataTemplate x:DataType="model:FairyTale">
@@ -77,7 +89,6 @@
                                             <GradientStop Offset="1"
                                                           Color="{x:StaticResource LightBlackApp}" />
                                         </LinearGradientBrush>
-
                                     </RoundRectangle.Fill>
                                 </RoundRectangle>
 
@@ -92,7 +103,7 @@
                                     <Label Text="{Binding Name}"
                                            TextColor="{x:StaticResource White}"
                                            FontSize="Large" />
-                                    <Label Text="Read time 15 mins"
+                                    <Label Text="{Binding ReadTime, StringFormat='Read time : {0:h\\:mm\} mins'}"
                                            TextColor="{x:StaticResource White}" />
                                 </VerticalStackLayout>
                             </Grid>
@@ -115,7 +126,7 @@
                        VerticalOptions="Center"
                        IndicatorColor="#616161"
                        IndicatorSize="8"
-                       SelectedIndicatorColor="White" />
+                       SelectedIndicatorColor="{x:StaticResource White}"/>
 
         <Label Grid.Row="4"
                Text="Recommended for you"
@@ -124,8 +135,8 @@
                VerticalOptions="Center"
                Margin="25,10,25,10" />
 
-        <CollectionView  Grid.Row="5">
-            <CollectionView.ItemsSource>
+        <CollectionView  Grid.Row="5" ItemsSource="{Binding RecommentFairyTales}">
+            <!--<CollectionView.ItemsSource>
                 <x:Array Type="{x:Type model:FairyTale}">
                     <model:FairyTale Name="Test1"
                                      ImageFairyTale="pan.jpg" />
@@ -136,13 +147,13 @@
                     <model:FairyTale Name="Test4"
                                      ImageFairyTale="tyler.jpg" />
                 </x:Array>
-            </CollectionView.ItemsSource>
+            </CollectionView.ItemsSource>-->
             <CollectionView.ItemsLayout>
                 <LinearItemsLayout ItemSpacing="25"
                                    Orientation="Horizontal" />
             </CollectionView.ItemsLayout>
             <CollectionView.ItemTemplate>
-                <DataTemplate>
+                <DataTemplate x:DataType="model:FairyTale">
                     <Grid HeightRequest="200"
                           WidthRequest="200">
                         <Border HeightRequest="200"
@@ -188,15 +199,13 @@
                            HorizontalOptions="Center" />
                     <Label Grid.Column="2"
                            Grid.Row="1"
-                           FontSize="10"
-                           Text="Libray"
-                           TextColor="{x:StaticResource IconGrayApp}"
+                           Style="{x:StaticResource Key=MenuText}"
+                           Text="Libray"                           
                            HorizontalOptions="Center" />
                     <Label Grid.Column="3"
                            Grid.Row="1"
-                           FontSize="10"
-                           Text="Profile"
-                           TextColor="{x:StaticResource IconGrayApp}"
+                           Style="{x:StaticResource Key=MenuText}"
+                           Text="Profile"                           
                            HorizontalOptions="Center" />
                     <Label Grid.Column="0"
                            Grid.Row="0"
@@ -208,26 +217,20 @@
                            VerticalOptions="End"/>
                     <Label Grid.Column="1"
                            Grid.Row="0"
-                           FontSize="20"
-                           FontFamily="Icons"
-                           Text="{x:Static helper:FontelloHelper.Search}"
-                           TextColor="{x:StaticResource IconGrayApp}"
+                           Style="{x:StaticResource FontIconText}"
+                           Text="{x:Static helper:FontelloHelper.Search}"                           
                            HorizontalOptions="Center"
                            VerticalOptions="End" />
                     <Label Grid.Column="2"
                            Grid.Row="0"
-                           FontSize="20"
-                           FontFamily="Icons"
-                           Text="{x:Static helper:FontelloHelper.Book}"
-                           TextColor="{x:StaticResource IconGrayApp}"
+                           Style="{x:StaticResource FontIconText}"
+                           Text="{x:Static helper:FontelloHelper.Book}"                          
                            HorizontalOptions="Center"
                            VerticalOptions="End" />
                     <Label Grid.Column="3"
                            Grid.Row="0"
-                           FontSize="20"
-                           FontFamily="Icons"
-                           Text="{x:Static helper:FontelloHelper.User}"
-                           TextColor="{x:StaticResource IconGrayApp}"
+                           Style="{x:StaticResource FontIconText}"
+                           Text="{x:Static helper:FontelloHelper.User}"                         
                            HorizontalOptions="Center"
                            VerticalOptions="End" />
                 </Grid>

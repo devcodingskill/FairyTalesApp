@@ -51,11 +51,18 @@
 	<ItemGroup>
 	  <None Remove="Resources\Fonts\Epilogue-Medium 500.ttf" />
 	  <None Remove="Resources\Fonts\fontello.ttf" />
+	  <None Remove="Resources\Images\alison.jpg" />
+	  <None Remove="Resources\Images\justin.jpg" />
 	  <None Remove="Resources\Images\pan.jpg" />
+	  <None Remove="Resources\Images\stephen.jpg" />
+	  <None Remove="Resources\Images\taha.jpg" />
 	  <None Remove="Resources\Images\tyler.jpg" />
+	  <None Remove="Resources\Images\vinayak.jpg" />
 	</ItemGroup>
 
 	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Maui.Core" Version="5.2.0" />
+		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.0" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
 	</ItemGroup>
 
